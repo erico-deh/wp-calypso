@@ -196,8 +196,8 @@ export function hasCustomDomain( site ) {
 		return null;
 	}
 
-	const siteUrl = site.URL.replace( /^https?:\/\//, '' );
-	const siteUnmappedUrl = site.options.unmapped_url.replace( /^https?:\/\//, '' );
+	const siteUrl = withoutHttp( site.URL );
+	const siteUnmappedUrl = withoutHttp( site.options.unmapped_url );
 
 	return siteUrl !== siteUnmappedUrl;
 }
