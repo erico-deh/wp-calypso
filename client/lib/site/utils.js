@@ -175,9 +175,22 @@ export default {
 	},
 
 	/**
+	 * Returns the supplied URL without the initial http(s).
+	 * @param  {String}  url The URL to remove http(s) from
+	 * @return {?String}     URL without the initial http(s)
+	 */
+	withoutHttp( url ) {
+		if ( ! url ) {
+			return null;
+		}
+
+		return url.replace( /^https?:\/\//, '' );
+	},
+
+	/**
 	 * Checks whether a site has a custom mapped URL.
 	 * @param  {Object}   site Site object
-	 * @return {?Boolean} Whether site has custom domain
+	 * @return {?Boolean}      Whether site has custom domain
 	 */
 	hasCustomDomain( site ) {
 		if ( ! site && ! site.URL && ! site.options.unmapped_url ) {
