@@ -25,6 +25,7 @@
 .reader-full-post__back-container {
 	margin-top: 8px;
 	position: fixed;
+	z-index: z-index( '.masterbar', '.reader-back'	);
 	top: 50px;
 	left: 32px;
 
@@ -38,7 +39,6 @@
 		background: #fff;
 		border-bottom: 1px solid $gray-light;
 		margin-top: 0;
-		z-index: z-index( '.masterbar', '.reader-back'  );
 	}
 }
 
@@ -72,12 +72,12 @@
 }
 
 .reader-full-post .author-compact-profile {
+	z-index: z-index( '.masterbar', '.reader-profile'	);
 	@media only screen and ( max-width: 660px ) {
 		.author-compact-profile__follow .follow-button {
 			position: fixed;
 			top: 13px;
 			right: 100px;
-			z-index: z-index( '.masterbar', '.reader-back'  );
 		}
 	}
 }
@@ -129,7 +129,7 @@
 
 .reader-full-post__header-tags {
 	display: inline-flex;
-    width: calc(100% - 120px);
+	width: calc(100% - 120px);
 
 	.gridicon {
 		fill: $gray;
@@ -143,16 +143,15 @@
 	color: $gray;
 	list-style: none;
 	margin: 0;
-    padding: 0;
-    position: relative;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 100%;
+	padding: 0;
+	position: relative;
+	overflow: hidden;
+	white-space: nowrap;
+	width: 100%;
 
-    &::after {
-    	@include long-content-fade( $size: 35% );
-    }
+	&::after {
+		@include long-content-fade( $size: 20px );
+	}
 }
 
 .reader-full-post__header-tag-list-item {
